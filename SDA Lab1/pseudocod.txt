@@ -1,0 +1,81 @@
+funcție resizeMatrix(newLines, newColumns)
+
+    daca newLines < 0 sau newColumns < 0 atunci
+            returneaza exceptie: "Nu se poate redimensiona"
+
+    dacă newLines ≥ nrlines și newColumns ≥ nrcols atunci
+        nrlines ← newLines
+        nrcols ← newColumns
+        resizeUp()
+
+    altfel dacă newLines < nrlines și newColumns ≥ nrcols atunci
+        start ← start_row_indexes[noiLinii]
+        pentru linieSters de la 1 la nrlines - newLines executa
+            pentru fiecare elementSters de la start la len_non_zero_values - 1 executa
+                non_zero_elements[elementSters] ← non_zero_elements[elementSters + 1]
+            sfârșit pentru
+            len_non_zero_values ← len_non_zero_values - 1
+        sfârșit pentru
+        nrlines ← newLines
+        nrcols ← newColumns
+
+    altfel dacă newColumns < nrcols și newLines ≥ nrlines atunci
+        pentru coloană de la 0 la len_non_zero_values fac
+            dacă column_indexes[coloana] > noiColoane atunci
+                pentru fiecare l de la coloana la len_non_zero_values - 1 executa
+                    non_zero_elements[l] ← non_zero_elements[l + 1]
+                    column_indexes[l] ← column_indexes[l + 1]
+                sfârșit pentru
+                len_non_zero_values ← len_non_zero_values - 1
+            sfârșit dacă
+        sfârșit pentru
+        nrlines ← newLines
+        nrcols ← newColumns
+
+    altfel
+        start ← start_row_indexes[newLines]
+        pentru linieSters de la 1 la nrlines - newLines executa
+            pentru elementSters de la start la len_non_zero_values - 1 executa
+                non_zero_elements[elementSters] ← non_zero_elements[elementSters + 1]
+            sfârșit pentru
+            len_non_zero_values ← len_non_zero_values - 1
+        sfârșit pentru
+        pentru fiecare coloană de la 0 la len_non_zero_values executa
+            dacă column_indexes[coloana] > noiColoane atunci
+                pentru fiecare l de la coloana la len_non_zero_values - 1 executa
+                    non_zero_elements[l] ← non_zero_elements[l + 1]
+                    column_indexes[l] ← column_indexes[l + 1]
+                sfârșit pentru
+                len_non_zero_values ← len_non_zero_values - 1
+            sfârșit dacă
+        sfârșit pentru
+        nrlines ← noiLinii
+        nrcols ← noiColoane
+    sfârșit dacă
+sfârșit funcție
+
+
+////////////
+Documentatie:
+verifica cele 4 cazuri:
+1) si linia si coloana sunt mai mari decat cele initiale
+2) linia mai mica si coloana mai mare
+3) coloana mai mica si linia mai mare
+4) si linia si coloana mai mici
+
+Best case -> Theta(1) ambele valori sunt la fel
+average Case -> Theta(n^2) ~ Worst Case
+Worst Case -> Theta(n^2) se redimensioneaza in jos pana la linia 0 si coloana 0
+
+
+
+
+
+
+
+
+
+
+
+
+
