@@ -1,0 +1,23 @@
+Describe:
+functia itereaza prin cheile SMM ului... in cazul in care gaseste mai multe chei
+la fel trece peste ele, iterand doar o data mai multe aparitii
+
+next() function:
+pre: current se afla pe pozitia curenta
+pos: current este pus pe urmatoarea pozitie
+
+first() function:
+pre: nichts
+pos: currentul este plasat pe prima pozitie valida
+
+valid() function:
+pos: returneaza true sau false daca ne aflam pe o pozitie valida
+
+get current() function:
+returneaza datele din perechea curenta (current)
+
+/*
+ * Best case: T(1)
+ * Average Case: T(n)
+ * Worst Case: T(n)
+ * */
