@@ -1,0 +1,29 @@
+bool SortedBag::compareTrees(SortedBag::Node *node1, SortedBag::Node *node2) const {
+
+complexity
+Best Case Theta(1)
+Average Case Theta(n)
+Worst Case Theta(n) -> verifica toate nodurile intre ele, n numarul de elemente din cele 2 BST uri
+
+function compareTrees()
+    //pre 2 noduri root din 2 BST care sunt initializati cu root ul
+    //pos returneaza false daca gaseste 2 noduri diferite true in caz contrar
+
+    daca node1 == nullptr SI node2 == nullptr atunci
+        return true;
+
+
+    daca node1 == nullptr SAU node2 == nullptr
+        return false;
+
+
+    daca node1->element == node2->element  // daca au aceeasi valoare
+        compareTrees(node1->leftNode, node2->leftNode) // apelare recursiva pentru partea stanga
+        compareTrees(node1->rightNode, node2->rightNode) // apelare recursiva pentru partea dreapta
+
+    altfel return false; // daca nu sunt egale returneaza false
+
+
+function operator==()
+    // pre un alt BST
+    // returneaza true sau false daca cei BST curent si cel primit ca parametru sunt egali

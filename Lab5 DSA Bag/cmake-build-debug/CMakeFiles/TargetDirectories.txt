@@ -1,0 +1,3 @@
+D:/Lab5 DSA Bag/cmake-build-debug/CMakeFiles/Lab5_DSA_Bag.dir
+D:/Lab5 DSA Bag/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Lab5 DSA Bag/cmake-build-debug/CMakeFiles/rebuild_cache.dir
