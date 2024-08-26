@@ -1,0 +1,3 @@
+D:/SDA-Lab2/cmake-build-debug/CMakeFiles/SDA_Lab2.dir
+D:/SDA-Lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/SDA-Lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

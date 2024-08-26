@@ -1,0 +1,36 @@
+funcție modificareElem(nouElem: TComp) {
+    dacă multime.search(nouElem) == adevărat atunci
+        dacă getCurrent() != nouElem atunci
+            aruncă excepție "Elementul există deja în altă parte a containerului."
+        altfel
+            return // Nu se întâmplă nimic, elementul este deja prezent.
+    altfel
+        șterge currentNode
+        primul()
+        nodAux = currentNode
+        nodPrevious = NULL
+        cât timp multime.r(getCurrent(), nouElem) == fals și nodAux != NULL executa
+            nodPrevious = nodAux
+            nodAux = nodAux->next
+        nodNou = nou SortedSet::DLLNode
+        nodNou->val = nouElem
+        dacă nodPrevious == NULL atunci
+            nodNou->next = nodAux
+            nodNou->prev = NULL
+            nodAux->prev = nodNou
+        altfel dacă nodAux == NULL atunci
+            nodNou->next = NULL
+            nodNou->prev = nodPrevious
+            nodPrevious->next = nodNou
+        altfel
+            nodPrevious->next = nodNou
+            nodNou->prev = nodPrevious
+            nodNou->next = nodAux
+            nodAux->prev = nodNou
+}
+
+// Specificatii modificareElement
+descriere: Modifca un element cu alta valoare si il pune pe pozitia corespunzatoare
+preconditie: o lista de Noduri
+postconditie: aceeasi lista cu elementul care era current schimbat
+
